@@ -1,0 +1,13 @@
+os
+numpy
+PIL
+matplotlib
+cv2
+random
+torch
+segmentation_models_pytorch
+thop
+re
+tqdm
+sys
+-U git+https://github.com/albu/albumentations
