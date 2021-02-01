@@ -96,9 +96,11 @@ class Dataset(BaseDataset):
         # mask = plt.imread(self.masks_fps[i], "bmp")
         mask = cv2.imread(self.masks_fps[i],0)
         
-        mask[mask==33] = 0
-        mask[mask==151] = 1
-        mask[mask==175] = 2
+        vals = np.unique(mask)
+        
+        mask[mask==vals[0]] = 0
+        mask[mask==vals[1]] = 1
+        mask[mask==vals[2]] = 2
         
         # extract certain classes from mask (e.g. cars)
         masks = [(mask == v) for v in self.class_values]
