@@ -98,9 +98,9 @@ class Dataset(BaseDataset):
         
         vals = np.unique(mask)
         
-        mask[mask==vals[0]] = 0
-        mask[mask==vals[1]] = 1
-        mask[mask==vals[2]] = 2
+        mask[mask==30] = 0
+        mask[mask==140] = 1
+        mask[mask==215] = 2
         
         # extract certain classes from mask (e.g. cars)
         masks = [(mask == v) for v in self.class_values]
